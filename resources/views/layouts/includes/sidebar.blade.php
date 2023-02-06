@@ -1,11 +1,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+            {{-- <i class="fas fa-laugh-wink"></i> --}}
         </div>
-        <div class="sidebar-brand-text mx-3"> Ticketing<sup></sup></div>
+        <div class="sidebar-brand-text mx-3"> T i c k e t i n g<sup></sup></div>
     </a>
     @if (Auth::user()->role == 'admin')
         <!-- Divider -->
@@ -59,7 +59,7 @@
 
                 @elseif (Auth::user()->role == 'admin')
                     <a class="collapse-item" href="{{ route('ticketing.index') }}">Ticketing</a>
-                    
+
                     <a class="collapse-item" href="{{ route('jenisrequest.index') }}">Jenis Request</a>
                     <a class="collapse-item" href="{{ route('projectcustomer.index') }}">Project Customer</a>
                 @endif

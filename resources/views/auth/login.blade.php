@@ -24,7 +24,7 @@
 
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{url('/dashboard1')}}"><b>Ticketing&nbsp;&nbsp;</b>System</a>
+    <a href="{{url('/dashboard1')}}"><b>Ticketing&nbsp;</b>System</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

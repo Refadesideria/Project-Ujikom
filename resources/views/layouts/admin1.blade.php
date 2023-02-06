@@ -43,7 +43,7 @@
                  <!-- Main Content -->
 
                 @yield('content')
-             
+
 
              <!-- Logout Modal-->
             <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -70,11 +70,9 @@
        </div>
     </div>
 
-                <!-- Begin Page Content -->
+    <!-- Begin Page Content -->
 
-
-                    <!-- Page Heading -->
-
+    <!-- Page Heading -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('template/vendor/jquery/jquery.min.js')}}"></script>
@@ -102,7 +100,7 @@
             $('#dataTable').DataTable();
         });
     </script>
-
+   <script src="https://kit.fontawesome.com/dd0e72dee1.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

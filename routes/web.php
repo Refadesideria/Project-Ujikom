@@ -11,15 +11,9 @@ use App\Http\Controller\AdminController;
 use App\Http\Controller\UserTicketingController;
 use App\Http\Controller\ProjectCustomerController;
 use App\Http\Controller\JenisrequestController;
-
-// use App\Http\Controller\FrontendController;
-// use App\Http\Controllers\TicketingController\detail;
 // use App\Http\Controller\ProfileController;
 // use App\Http\Controller\SantriController;
 
-
-
-// Route::put('/ticketing/{id}', [TicketingController::class, 'store']);
 
 /*
 |--------------------------------------------------------------------------
@@ -80,47 +74,29 @@ Route::group(['middleware' => ['auth', 'isAdmin:admin']], function(){
     //     return view('layouts.profile');
     // });
     // Route::resource('/all-user',UserController::class);
-    Route::resource('/jabatan',JabatanController::class);
-    Route::resource('/divisi',DivisiController::class);
-    Route::resource('/kategori',KategoriController::class);
-    Route::resource('/status','StatusController');
+
     Route::resource('/customer','CustomerController');
     Route::resource('/department','DepartmentController');
     Route::resource('/priority','PriorityController');
-    Route::resource('/adminticketing','AdminController');
-    Route::resource('/userticketing','UserTicketingController');
+
     // Route::resource('/ticketing',TicketingController::class);
     // Route::resource('/detail/{ticketing}','TicketingController@detail')->name('ticketing.detail');
-    Route::get('/ticketing/{id}/store_pengaturan', 'TicketingController@store_pengaturan')->name('ticketing.store_pengaturan');
-    Route::get('/ticketing/{id}/dtl', 'TicketingController@dtl')->name('ticketing.dtl');
-    Route::post('ticketing/{id}update_pengaturan','TicketingController@update_pengaturan')->name('ticketing.dtl');
+
     // Route::get('/dtl/{id}', [TicketingController::class, 'dtl'])->name("dtl");
     // Route::get('ticketing/{ticketing}/dtl', 'TicketingController@dtl')->name('ticketing.dtl');
     Route::resource('/projectcustomer','ProjectCustomerController');
     Route::resource('/jenisrequest','JenisrequestController');
-    Route::resource('/detail',DetailController::class);
+
 
     Route::resource('/profile',ProfileController::class);
 
-    Route::get('/formulir', 'PegawaiController@formulir');
-    Route::post('/formulir/proses', 'PegawaiController@proses');
 
-    Route::get('detaildata', 'DetailDataController@detaildata');
-    Route::post('detaildata/prosesdetail', 'DetailDataController@prosesdetail');
-
-    Route::get('/input', 'DetailTicketingController@input');
-    Route::post('/proses', 'DetailTicketingController@proses');
-    Route::get('/tampil', 'DetailTicketingController@tampil');
 
 
 });
 
-    // Route::get('/create_detail/{id}', 'TicketingController@create_detail')->name('ticketing.create_detail');
-    // Route::get('ticketing/{var}/detail', 'TicketingController@detail')->name('ticketing.detail');
 
-    Route::get('detaildata', 'TicketingController@detaildata')->name('ticketing.detaildata');
-    Route::post('/store_detail', 'TicketingController@store_detail')->name('ticketing.store_detail');
-    Route::get('/detail_show', 'TicketingController@detail_show')->name('ticketing.detail_show');
+   
 
     Route::group(['middleware' => ['auth', 'isAdmin:guest,admin']], function(){
 
@@ -136,7 +112,7 @@ Route::group(['middleware' => ['auth', 'isAdmin:admin']], function(){
         Route::get('/addchat', function () {
             return view('user.addchat');
         });
-        Route::resource('/',FrontController::class);
+        // Route::resource('/',FrontController::class);
 
         // Route::resource('ticketings', [FrontendController::class, 'ticketings']);
         // Route::resource('/contoh',Contoh::class);
