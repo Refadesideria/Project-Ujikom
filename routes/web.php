@@ -11,6 +11,8 @@ use App\Http\Controller\AdminController;
 use App\Http\Controller\UserTicketingController;
 use App\Http\Controller\ProjectCustomerController;
 use App\Http\Controller\JenisrequestController;
+use App\Http\Controllers\ChartJsController;
+use App\Http\Controllers\PdfController;
 // use App\Http\Controller\ProfileController;
 // use App\Http\Controller\SantriController;
 
@@ -58,6 +60,12 @@ Route::get('/admin1', function () {
     return view('layouts.admin1');
 });
 
+Route::post('print', [PdfController::class, 'laporan'])->name('laporan.print');
+Route::get('print/{id}', [PdfController::class, 'singlePrint'])->name('laporan.singlePrint');
+Route::get('laporan', function (){
+  return view('laporan.index');
+})->name('laporan');
+
 
 
 
@@ -89,14 +97,14 @@ Route::group(['middleware' => ['auth', 'isAdmin:admin']], function(){
 
 
     Route::resource('/profile',ProfileController::class);
-
+    Route::get('/chartjs', [ChartJsController::class, 'index'])->name('chartjs.index');
 
 
 
 });
 
 
-   
+
 
     Route::group(['middleware' => ['auth', 'isAdmin:guest,admin']], function(){
 

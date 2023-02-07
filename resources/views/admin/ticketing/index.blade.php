@@ -46,10 +46,10 @@
                           <th>Status</th>
                           <th>Priority</th>
                           <th>Jenis Request</th>
-                          <th>Tanggal Request</th>
+                          {{-- <th>Tanggal Request</th>
                           <th>Tanggal Selesai</th>
                           <th>Nama PIC</th>
-                          <th>Deskripsi</th>
+                          <th>Deskripsi</th> --}}
                           <th>Aksi</th>
                         </tr>
                         </thead>
@@ -78,10 +78,10 @@
                                             </td>
                                             <td>{{ $ticketing->Priority->name }}</td>
                                             <td>{{ $ticketing->Jenisrequest->name }}</td>
-                                            <td>{{ $ticketing->tanggal_request}}</td>
+                                            {{-- <td>{{ $ticketing->tanggal_request}}</td>
                                             <td>{{ $ticketing->tanggal_selesai }}</td>
                                             <td>{{ $ticketing->nama_pic }}</td>
-                                            <td>{{ $ticketing->deskripsi }}</td>
+                                            <td>{{ $ticketing->deskripsi }}</td> --}}
                                             @if (Auth::user()->role == 'admin')
                                             <td>
 
