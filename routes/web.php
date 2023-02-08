@@ -53,8 +53,8 @@ Route::get('/admin2', function () {
 Route::get('/db', function () {
     return view('layouts.db');
 });
-Route::get('/dashboard1', function () {
-    return view('layouts.dashboard1');
+Route::get('/dashboard', function () {
+    return view('layouts.dashboard');
 });
 Route::get('/admin1', function () {
     return view('layouts.admin1');
@@ -71,7 +71,7 @@ Route::get('laporan', function (){
 
 Auth::routes();
 Route::group(['middleware' => ['auth', 'isAdmin:admin']], function(){
-    Route::get('/', 'DashboardController@index')->name('dashboard');
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('/dashboard', function () {
         return view('layouts.dashboard');
     });
@@ -97,7 +97,7 @@ Route::group(['middleware' => ['auth', 'isAdmin:admin']], function(){
 
 
     Route::resource('/profile',ProfileController::class);
-    Route::get('/chartjs', [ChartJsController::class, 'index'])->name('chartjs.index');
+    Route::resource('/chartjs',ChartJsController::class);
 
 
 

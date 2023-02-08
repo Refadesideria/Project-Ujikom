@@ -1,24 +1,29 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
 use DB;
-use Carbon\Carbon;
 
-class ChartJsController extends Controller
+class ChartJSController extends Controller
 {
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
     public function index()
     {
-        $year = ['2015','2016','2017','2018','2019','2020'];
+        $users = User::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
+                    ->whereYear('created_at', date('Y'))
+                    ->groupBy(DB::raw("month_name"))
+                    ->orderBy('id','ASC')
+                    ->pluck('count', 'month_name');
 
-        $user = [];
-        foreach ($year as $key => $value) {
-            $user[] = User::where(\DB::raw("DATE_FORMAT(created_at, '%Y')"),$value)->count();
-        }
+        $labels = $users->keys();
+        $data = $users->values();
 
-    	return view('chartjs')->with('year',json_encode($year,JSON_NUMERIC_CHECK))->with('user',json_encode($user,JSON_NUMERIC_CHECK));
+        return view('chartjs', compact('labels', 'data'));
     }
 }

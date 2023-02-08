@@ -1,3 +1,4 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
@@ -62,6 +63,8 @@
 
                     <a class="collapse-item" href="{{ route('jenisrequest.index') }}">Jenis Request</a>
                     <a class="collapse-item" href="{{ route('projectcustomer.index') }}">Project Customer</a>
+                    <a class="collapse-item" href="{{ route('laporan') }}">Laporan</a>
+
                 @endif
 
             </div>
@@ -74,13 +77,14 @@
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
         <div class="sidebar-heading">
-            Profile
+          Settings
         </div>
         <li class="nav-item">
             <a class="nav-link" href="profile">
                 <i class="fas fa-fw fa-wrench"></i>
-                <span>Settings</span></a>
+                <span>Profile</span></a>
         </li>
+
     @endif
 
 </ul>

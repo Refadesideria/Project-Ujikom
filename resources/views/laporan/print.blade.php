@@ -46,7 +46,7 @@
                 margin:0px;
             }
             caption{
-                color: blue;
+                color: black;
                 font-weight: bold;
                 font-family: 'Courier New', Courier, monospace;
             }
@@ -57,28 +57,40 @@
         <div class="container">
             <table>
                 <caption>
-                  TICKETING
+                  LAPORAN SIM TICKETING
                 </caption>
                 <thead>
                     <tr>
-                        <th colspan="3">Transaksi Ticketing <strong>#{{ $data->id }}</strong></th>
+                        <th colspan="3">Transaksi Ticketing <strong>{{ $data->id }}</strong></th>
                         <th>{{ $data->created_at->format('D, d M Y') }}</th>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <h4>Perusahaan: </h4>
+                            <h4>Perusahaan: </h4><br>
                             <p>PT.MGI ASPAC.<br>
-                                Jl. Cibaduyut Gg Sauyunan<br>
+                                Jl.Bengawan No.76, Kec.Bandung Wetan<br>
+                                Kota Bandung,Jawa Barat 4014<br>
                                 08815733482<br>
-                               refadesi@gmail.com
+                                marchisinise@gmail.com
                             </p>
                         </td>
+
                         <td colspan="2">
-                            <h4>Ticketing: </h4>
-                            <p>{{ $data->ticketing->jneisrequest->kode }}<br>
-                              {{ $data->ticketing->nama_subject }}<br>
-                              {{ $data->ticketing->customer->name }} <br>
-                              {{ $data->ticketing->department->name }}
+                            <h4>Ticketing: </h4><br>
+                            <p><b>Kode Request: </b><br>
+                                {{ $data->jenisrequest->kode }} <br>
+                              <b> Jenis Request:  </b> <br>
+                              {{ $data->jenisrequest->name }}<br>
+                              <b> Nama Subject: </b> <br>
+                               {{ $data->nama_subject }}<br>
+                              <b> Status: </b><br>{{ $data->nama_stat }}  <br>
+                             <b> Customer: </b> <br> {{ $data->customer->name }} <br>
+
+                              <b> Department: </b> <br> {{ $data->department->name }} <br>
+
+
+
+
                             </p>
                         </td>
                     </tr>
@@ -91,10 +103,10 @@
                         <th>Deskripsi</th>
                     </tr>
                     <tr>
-                        <td>{{ $data->ticketing->tanggal_request }}</td>
-                        <td>{{ $data->ticketing->tanggal_selesai }}</td>
-                        <td>{{ $data->ticketing->nama_pic }} </td>
-                        <td>{{ $data->ticketing->deskripsi }} </td>
+                        <td>{{ $data->tanggal_request }}</td>
+                        <td>{{ $data->tanggal_selesai }}</td>
+                        <td>{{ $data->nama_pic }} </td>
+                        <td>{{ $data->deskripsi }} </td>
 
                     </tr>
 
@@ -105,3 +117,6 @@
         @endforeach
     </body>
     </html>
+
+
+    {{-- <i class="bi bi-printer-fill"></i> --}}

@@ -100,7 +100,7 @@
     </div>
 
      <!-- Area Chart -->
-     <div class="col-md-12">
+     {{-- <div class="col-md-12">
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 

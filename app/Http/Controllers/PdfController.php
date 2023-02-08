@@ -16,8 +16,8 @@ class PdfController extends Controller
 }
 
 public function laporan(Request $request){
-    $start = $request->tanggal_awal;
-    $end = $request->tanggal_akhir;
+    $start = $request->tanggal_request;
+    $end = $request->tanggal_selesai;
 
     if($end >= $start){
             $ticketing = Ticketing::whereBetween('tanggal_request', [$start, $end])->get();
